@@ -1,0 +1,22 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "fight": {
+      "name": "fight",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "moodbase": {
+      "name": "moodbase",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "Task": 0,
+    "README": 1
+  }
+}
