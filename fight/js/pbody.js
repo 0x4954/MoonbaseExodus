@@ -1,16 +1,12 @@
 import Transform from "./transform.js";
 import { vAdd, vSub, vMulN } from "./vec.js";
 
-let pBodies = [];
-
 class PBody extends Transform {
 	constructor(x, y, width, height) {
 		super(x, y, width, height);
 		this.velocity = {x: 0, y: 0};
 		this.gravity = {x: 0, y: -2};
 		this.grounded = false;
-
-		pBodies.push(this);
 	}
 
 	update() {
@@ -30,21 +26,9 @@ class PBody extends Transform {
 			this.velocity.y = 0;
 			newPos.y = 500 - this.size.y * 0.5;
 		}
-		this.position = newPos;
-	}
-
-	remove() {
-		const idx = pBodies.indexOf(this);
-		if (idx != -1) {
-			pBodies.splice(idx, 1);
-		}
+		this.position.x = newPos.x;
+		this.position.y = newPos.y;
 	}
 }
 
-function pUpdate() {
-	for (let i in pBodies) {
-		pBodies[i].update();
-	}
-}
-
-export { PBody, pUpdate };
+export { PBody };
