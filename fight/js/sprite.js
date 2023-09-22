@@ -3,9 +3,10 @@ import Transform from "./transform.js";
 let sprites = [];
 
 class Sprite {
-	constructor(fillStyle, transform) {
-		this.fillStyle = fillStyle;
+	constructor(color, transform) {
 		this.transform = transform || new Transform();
+		this.direction = 1;
+		this.color = color;
 		this.zIndex = 0;
 
 		sprites.push(this);
@@ -18,11 +19,12 @@ class Sprite {
 		this.context = context;
 	}
 
-	draw(position) {
-		this.context.fillStyle = this.fillStyle;
+	draw() {
+		this.context.fillStyle = this.color;
+		const pos = this.transform.getPos();
 		this.context.fillRect(
-			this.transform.position.x - this.transform.size.x * 0.5,
-			this.transform.position.y - this.transform.size.y * 0.5,
+			pos.x,
+			pos.y,
 			this.transform.size.x,
 			this.transform.size.y
 		);
