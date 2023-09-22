@@ -23,7 +23,7 @@ class Player {
 		this.sprite.transform = pbody;
 		this.attackBoxSprite = new Sprite("#fff", this.attackBox);
 		this.attackBoxSprite.zIndex = 1;
-		this.attacking = false;
+		this.attackDuration = 0;
 		this.attackCooldown = 0;
 
 		players.push(this);
@@ -40,21 +40,22 @@ class Player {
 		if (this.transform.grounded && this.input.moveDirection.y == 1) {
 			velocityAdd.y -= 40;
 		}
-		this.transform.velocity = vAdd(this.transform.velocity, velocityAdd);
 
-		this.transform.update(delta);
-		this.attackBoxSprite.color = this.attacking ? "#f99" : "#fff"
+		let attacking = this.attackDuration > 0;
+		
+		if (!attacking && this.input.attack && this.attackCooldown <= 0) {
+			this.attackDuration = 0.2;
+			this.attackCooldown = 0.5;
+			attacking = true;
+		}
 
-		this.attacking = this.input.attack && this.attackCooldown <= 0;
-
-		if (this.attacking) {
+		if (attacking) {
 			for (let i in players) {
 				const player = players[i];
 				if (player != this) {
 					const colliding = this.attackBox.collide(player.transform);
 					if (colliding) {
-						this.attacking = false;
-						this.attackCooldown = 0.5;
+						this.attackDuration = 0;
 
 						let direction = Math.sign(player.transform.position.x - this.transform.position.x);
 						player.transform.velocity = vAdd(player.transform.velocity, {x: 20 * direction, y: -30});
@@ -63,7 +64,13 @@ class Player {
 			}
 		}
 
-		this.attackCooldown -= delta;
+		this.attackDuration -= delta;
+		if (this.attackDuration <= 0) {
+			this.attackCooldown -= delta;
+		}
+		this.attackBoxSprite.color = attacking ? "#f99" : "#fff"
+		this.transform.velocity = vAdd(this.transform.velocity, velocityAdd);
+		this.transform.update(delta);
 	}
 
 	remove() {
