@@ -44,11 +44,11 @@ if (document.location.search.match(/type=embed/gi)) {
 
     AUDIO: {
       theme:
-        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/155629/theme.mp3",
+        "audio/theme.mp3",
       engine:
-        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/155629/engine.wav",
-      honk: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/155629/honk.wav",
-      beep: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/155629/beep.wav",
+        "audio/engine.wav",
+      honk: "audio/honk.wav",
+      beep: "audio/beep.wav",
     },
   };
 
