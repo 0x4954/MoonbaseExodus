@@ -1,8 +1,8 @@
 import { Sprite, render } from "./sprite.js";
-import { PBody } from "./pbody.js";
-import Transform from "./transform.js";
-import { vAdd } from "./vec.js";
+import { Transform } from "./transform.js";
 import { Player } from "./player.js";
+import { PBody } from "./pbody.js";
+import { vAdd } from "./vec.js";
 
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
@@ -18,52 +18,59 @@ const player1 = new Player('#f00', new PBody(100, 200, 70, 150));
 player1.setContext(context);
 
 const player2 = new Player('#00f', new PBody(900, 200, 70, 150));
-player2.direction = -1;
+player2.attackBox.offset.x = -player2.attackBox.offset.x
 player2.setContext(context);
 
 let keysDown = [];
 
 function handleInput() {
-	let p1add = {x: 0, y: 0};
+	let p1MoveDir = {x: 0, y: 0};
 	if (keysDown.includes("a")) {
-		p1add.x -= 2;
+		p1MoveDir.x -= 1;
 	}
 	if (keysDown.includes("d")) {
-		p1add.x += 2;
+		p1MoveDir.x += 1;
 	}
-	if (player1.transform.grounded) {
-		if (keysDown.includes("w")) {
-			p1add.y -= 40;
-		}
-	} else {
-		p1add.x *= 0.125; // less moveability in air
+	if (keysDown.includes("w")) {
+		p1MoveDir.y = 1;
 	}
+	player1.input.attack = keysDown.includes("f");
+	player1.input.moveDirection = p1MoveDir;
 
-	let p2add = {x: 0, y: 0};
+	let p2MoveDir = {x: 0, y: 0};
 	if (keysDown.includes("ArrowLeft")) {
-		p2add.x -= 2;
+		p2MoveDir.x -= 1;
 	}
 	if (keysDown.includes("ArrowRight")) {
-		p2add.x += 2;
+		p2MoveDir.x += 1;
 	}
-	if (player2.transform.grounded) {
-		if (keysDown.includes("ArrowUp")) {
-			p2add.y -= 40;
-		}
-	} else {
-		p2add.x *= 0.125; // less moveability in air
+	if (keysDown.includes("ArrowUp")) {
+		p2MoveDir.y = 1;
 	}
-
-	player1.transform.velocity = vAdd(player1.transform.velocity, p1add);
-	player2.transform.velocity = vAdd(player2.transform.velocity, p2add);
+	player2.input.attack = keysDown.includes("0");
+	player2.input.moveDirection = p2MoveDir;
 }
 
-function stepped() {
+let previousTick = 0;
+function stepped(timeStamp) {
+	if (timeStamp === undefined) {
+		timeStamp = 0;
+	}
+
+	const elapsed = timeStamp * 0.001;
+	const delta = elapsed - previousTick;
+
+	if (previousTick !== elapsed) {
+		handleInput();
+		
+		player1.update(delta);
+		player2.update(delta);
+		
+		render();
+	}
+
+	previousTick = elapsed;
 	requestAnimationFrame(stepped);
-	handleInput();
-	player1.update();
-	player2.update();
-	render();
 }
 stepped();
 

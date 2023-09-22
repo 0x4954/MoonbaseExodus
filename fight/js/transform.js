@@ -7,9 +7,21 @@ class Transform {
 		this.size = {x: width || 32, y: height || 32};
 	}
 
-	getPos(direction) {
-		return vSub(vAdd(this.position, {x: this.offset.x * direction || 1, y: this.offset.y}), vMulN(this.size, 0.5));
+	getPos() {
+		return vSub(vAdd(this.position, this.offset), vMulN(this.size, 0.5));
+	}
+
+	collide(transform) {
+		const posA = this.getPos();
+		const posB = transform.getPos();
+		const sizeA = this.size;
+		const sizeB = transform.size;
+
+		return 	posA.x + sizeA.x > posB.x && // aR > bL
+				posA.x < posB.x + sizeB.x && // aL < bR
+				posA.y + sizeA.y > posB.y && // aB > bT
+				posA.y < posB.y + sizeB.y    // aT < bB
 	}
 }
 
-export default Transform;
+export {Transform};

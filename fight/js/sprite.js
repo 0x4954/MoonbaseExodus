@@ -1,4 +1,4 @@
-import Transform from "./transform.js";
+import { Transform } from "./transform.js";
 
 let sprites = [];
 
@@ -21,7 +21,7 @@ class Sprite {
 
 	draw() {
 		this.context.fillStyle = this.color;
-		const pos = this.transform.getPos();
+		const pos = this.transform.getPos(this.direction);
 		this.context.fillRect(
 			pos.x,
 			pos.y,
@@ -44,4 +44,4 @@ function render() {
 	}
 }
 
-export {Sprite, render};
+export { Sprite, render };

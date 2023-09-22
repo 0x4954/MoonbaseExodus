@@ -1,5 +1,5 @@
-import Transform from "./transform.js";
 import { vAdd, vSub, vMulN } from "./vec.js";
+import { Transform } from "./transform.js";
 
 class PBody extends Transform {
 	constructor(x, y, width, height) {
@@ -9,9 +9,11 @@ class PBody extends Transform {
 		this.grounded = false;
 	}
 
-	update() {
-		this.velocity = vSub(vMulN(this.velocity, this.grounded ? 0.75 : 0.99), this.gravity);
-		let newPos = vAdd(this.position, this.velocity);
+	update(delta) {
+		const alpha = 60 * delta;
+		console.log(alpha);
+		this.velocity = vSub(vMulN(this.velocity, this.grounded ? 0.75 : 0.99), vMulN(this.gravity, alpha));
+		let newPos = vAdd(this.position, vMulN(this.velocity, alpha));
 		if (newPos.x - this.size.x * 0.5 < 0) {
 			this.velocity.x = this.velocity.x;
 			newPos.x = this.size.x * 0.5;
