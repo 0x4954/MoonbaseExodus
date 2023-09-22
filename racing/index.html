@@ -261,28 +261,28 @@
                 },
 
                 TREE:{
-                    src: "images/tree.png",
+                    src: "/racing/images/tree.png",
                     width: 132,
                     height: 192,
                 },
                 HERO:{
-                    src: "images/hero.png",
+                    src: "/racing/images/hero.png",
                     width: 110,
                     height: 56,
                 },
                 CAR:{
-                    src: "images/car04.png",
+                    src: "/racing/images/car04.png",
                     width: 50,
                     height: 36,
                 },
                 FINISH:{
-                    src: "images/finish.png",
+                    src: "/racing/images/finish.png",
                     width: 339,
                     height: 180,
                     offset: -0.5,
                 },
                 SKY:{
-                    src: "images/cloud.jpg",
+                    src: "/racing/images/cloud.jpg",
                 },
                 AUDIO:{
                     theme:"https://s3-us-west-2.amazonaws.com/s.cdpn.io/155629/theme.mp3",
@@ -518,7 +518,7 @@
 
             // Map variables
             function getFun(val) {
-                return (1) => val;
+                return (i) => val;
             }
 
             function genMap() {
@@ -690,7 +690,10 @@
                         tacho.innerText = speed | 0;
 
                         let cT = new Date(timestamp() - start);
-                        lap.innerText = '${cT.getMinutes()}'${cT.getSeconds().pad(2)}"${cT.getmilliseconds().pad(3)}";
+                        lap.innerText = `${cT.getMinutes()}'${cT.getSeconds().pad(2)}"${cT
+                            .getMilliseconds()
+                            .pad(3)}`;
+            //'${cT.getMinutes()}'${cT.getSeconds().pad(2)}"${cT.getmilliseconds().pad(3)}';
                      }
             }
              //sound of engine on keypress and car move forward - backward - right - left
