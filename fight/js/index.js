@@ -14,9 +14,16 @@ const bkg = new Sprite('#9bf', new Transform(500, 250, 1000, 500));
 bkg.setContext(context);
 bkg.zIndex = -1;
 
+
+const p1Healthbar = new Sprite("#f00", new Transform(150, 50, 250, 50));
+p1Healthbar.setContext(context);
+p1Healthbar.zIndex = 2;
 const player1 = new Player('#f00', new PBody(100, 200, 70, 150));
 player1.setContext(context);
 
+const p2Healthbar = new Sprite("#f00", new Transform(1000 - 150, 50, 250, 50));
+p2Healthbar.setContext(context);
+p2Healthbar.zIndex = 2;
 const player2 = new Player('#00f', new PBody(900, 200, 70, 150));
 player2.attackBox.offset.x = -player2.attackBox.offset.x
 player2.setContext(context);

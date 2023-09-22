@@ -20,14 +20,16 @@ class Sprite {
 	}
 
 	draw() {
-		this.context.fillStyle = this.color;
-		const pos = this.transform.getPos(this.direction);
-		this.context.fillRect(
-			pos.x,
-			pos.y,
-			this.transform.size.x,
-			this.transform.size.y
-		);
+		if (this.context) {
+			this.context.fillStyle = this.color;
+			const pos = this.transform.getPos(this.direction);
+			this.context.fillRect(
+				pos.x,
+				pos.y,
+				this.transform.size.x,
+				this.transform.size.y
+			);
+		}
 	}
 
 	remove() {
