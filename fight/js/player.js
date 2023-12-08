@@ -27,7 +27,7 @@ class Player {
 		this.attackCooldown = 0;
 
 		players.push(this);
-	}
+	} // ctor
 
 	setContext(context) {
 		this.sprite.setContext(context);
