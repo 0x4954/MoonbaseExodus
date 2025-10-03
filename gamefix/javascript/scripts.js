@@ -102,6 +102,10 @@ if (document.location.search.match(/type=embed/gi)) {
     KEYS[e.code] = e.type === `keydown`;
     e.preventDefault();
   };
+  const keySpace = (e) => {
+    KEYS[e.code] = e.type === `space`;
+    e.preventDefault();
+  };
   addEventListener(`keydown`, keyUpdate);
   addEventListener(`keyup`, keyUpdate);
 
@@ -274,6 +278,9 @@ if (document.location.search.match(/type=embed/gi)) {
 
       reset();
     }
+    if (e.code === "Space") {
+      audio.play("honk");
+    }
   });
 
   // ------------------------------------------------------------
@@ -301,6 +308,8 @@ if (document.location.search.match(/type=embed/gi)) {
     else if (KEYS.ArrowLeft)
       (hero.style.backgroundPosition = "0 0"),
         (playerX -= 0.007 * step * speed);
+    else if (KEYS.keySpace)
+      audio.play("honk");
     else hero.style.backgroundPosition = "-110px 0";
 
     playerX = playerX.clamp(-3, 3);
