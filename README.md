@@ -20,4 +20,4 @@ Handlingen utspiller seg i en ikke altfor fjern fremtid, hvor romutforskning har
 6. Flere avslutninger: Spillet har flere slutter, avhengig av valgene du tar underveis. Dine beslutninger vil påvirke utfallet av historien og din skjebne på månen.
 
 "Månebase Exodus: Den Store Flukten" gir deg en spennende opplevelse som tester dine problemløsningsferdigheter, intelligens og evne til å håndtere stress. Kan du finne veien ut av månebasen og avsløre dens mørke hemmeligheter, eller vil du bli fanget for alltid på månen? Spillet gir deg muligheten til å finne ut av det!
-<img width="740" height="1563" alt="image" src="https://github.com/user-attachments/assets/52d7f782-8e98-4ee3-aead-626b7018d126" />
+
