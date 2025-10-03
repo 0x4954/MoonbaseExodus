@@ -1,0 +1,13 @@
+I nær fremtid, i det 21. århundre, har menneskeheten nådd nye høyder innen romutforskning og teknologiske fremskritt. Jordens ressurser begynte å tømmes, og behovet for å finne alternative måter å sikre overlevelsen og fremtiden på planeten ble mer akutt. Et internasjonalt samarbeid ble dannet, kjent som "Global Space Initiative" (GSI), som hadde som mål å etablere en varig tilstedeværelse utenfor jorden.
+
+Som et resultat ble "Project Luna Nova" født. Dette ambisiøse prosjektet hadde som mål å etablere en permanent menneskelig koloni på månen, kjent som "Luna Nova." Målet var å utforske månens ressurser, som heliosfærisk energi og sjeldne mineraler, og bruke dem til å støtte både jordens behov og fremtidige interplanetariske reiser.
+
+Etter år med hardt arbeid og investeringer ble Luna Nova en realitet. Den var utstyrt med avansert teknologi, inkludert selvstyrte hydroponiske gårder for matproduksjon og avanserte solenergisystemer. Forskere, ingeniører og astronauter fra hele verden strømmet til basen for å delta i denne historiske utforskningen.
+
+Forskerene fant mikrober i kraterene som er utsatt for permanent skygge. Disse mikrobene hadde over lang tid blitt utsatt for sterk kosmisk stråling som resultet i at de muterte. De muterte mikrobene kom på avveie og infiserte forskerene som hurtig be mutert til vesen som ikke var gjenkjennelige som mennesker. De som ikke hadde blitt infisert kalte dem bare for romvesen. Disse "romvesenene" fikk spesielle egenskaper og ble en trussel mot resten av kolonien. For å forsøke å stoppe spredningen av infeksjonen, besluttet de gjenværende overlevende å sprenge forskningslaboratoriet, som også inneholdt store mengder av det farlige muterte materialet.
+
+Kommunikasjon med jorden ble kuttet av romvesene, og Månebasen Luna Nova ble isolert fra resten av menneskeheten.
+
+Spillere tar rollen som en av de gjenværende overlevende, en vitenskapsmann eller -kvinne som ikke er infisert. Du er nå fanget på Månebasen Luna Nova, hvor du må finne en vei ut før oksygenet går tomt og livet svinner ut. Samtidig må du løse gåter, samle ledetråder og forsøke å forstå hva som egentlig skjedde på basen. I tillegg må du takle den konstante trusselen fra de uforklarlige romvesenene som en gang var dine kolleger.
+
+Dette er historien bak spillet "Moonbase Exodus", hvor spillerne står overfor en kamp for overlevelse og en utfordrende reise for å avdekke sannheten bak katastrofen på Månebasen Luna Nova.
